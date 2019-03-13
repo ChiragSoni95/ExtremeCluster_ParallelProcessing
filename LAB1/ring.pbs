@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=8,walltime=1:00
+#PBS -N MPIring
+#PBS -q edu_shared
+#PBS -m abe
+#PBS -M csoni3@uic.edu
+#PBS -e ring.err
+#PBS -o ring.out
+#PBS -d /export/home/csoni3/Soni_665930262_Anand_677787570_ECE566_LAB1/CS566/LAB1/
+module load tools/mpich2-1.5-gcc
+mpirun -machinefile $PBS_NODEFILE -np $PBS_NP ./ring
